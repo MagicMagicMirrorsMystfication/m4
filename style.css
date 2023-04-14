@@ -1,0 +1,334 @@
+body {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.ddiv {
+  visibility: hidden;
+  width: calc(var(--pixel-size) * 160);
+  height: calc(var(--pixel-size) * 144);
+  z-index:1;
+  position:absolute;
+  overflow: hidden;
+  outline: var(--pixel-size) solid #fff;
+
+
+}
+
+/* OK */
+
+:root {
+    --pixel-size: 3px;
+    --grid-cell: calc( var(--pixel-size) * 16);
+    --bg: #9fa7e4;
+ }
+
+ .commencer {
+   width: calc(var(--pixel-size) * 160);
+   height: calc(var(--pixel-size) * 144);
+   overflow: hidden;
+   background: #61ddf7;
+   z-index:3;
+   position:absolute;
+   outline: var(--pixel-size) solid #fff;
+
+}
+
+.commimg {
+   min-width: 100%;
+   min-height: 100%;
+
+}
+
+.combutton {
+   bottom: 65%;
+   left: 220px;
+   z-index: 4;
+   position: relative;
+   border-radius: 14px;
+   animation: blinker 1s linear infinite;
+       background-color: yellow;
+   
+
+   background-color: purple;
+}
+      
+ @keyframes blinker {
+            50% {
+              background-color: white;
+            }
+          }
+
+/* OK */
+
+.pixel-art {
+    image-rendering: pixelated;
+ }
+
+ .frame {
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 144);
+    outline: var(--pixel-size) solid #fff;
+    z-index:2;
+    position:relative;
+ }
+
+ .camera {
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 144);
+    overflow: hidden;
+    background-image: url("backgroundhelp.png");
+    background-size: 100%;
+
+
+    position:relative;
+
+ }
+
+
+
+ .map {
+    image-rendering: pixelated;
+    background-image: url("map333.gif");
+    background-size: 100%;
+    width: calc(13 * var(--grid-cell));
+    height: calc(10 * var(--grid-cell));
+    position: relative;
+ }
+
+ .character {
+    width: calc( var(--grid-cell)* 2 );
+    height: calc( var(--grid-cell)* 2 );
+    position: absolute;
+    overflow:hidden;
+ }
+
+ .shadow {
+    width: calc( var(--grid-cell)* 2 );
+    height: calc( var(--grid-cell)* 2 );
+    position: absolute;
+    left:0;
+    top:0;
+    background: url("DemoRpgCharacterShadow.png") no-repeat no-repeat;
+    background-size: 100%;
+ }
+
+ .character_spritesheet {
+    position: absolute;
+    background: url("DemoRpgCharacter.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--grid-cell)* 8 );
+    height: calc( var(--grid-cell)* 8 );
+ }
+
+ .character[facing="right"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -32 );
+ }
+ .character[facing="up"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -64 );
+ }
+ .character[facing="left"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -96 );
+ }
+ .character[walking="true"] .character_spritesheet {
+    animation: walkAnimation 0.6s steps(4) infinite;
+ }
+
+ @keyframes walkAnimation {
+   from {
+     transform: translate3d(0%,0%,0);
+   }
+   to {
+     transform: translate3d(-100%,0%,0);
+   }
+ }
+
+ .dpad {
+    position:absolute;
+    right: calc(var(--pixel-size) * 2);
+    bottom: calc(var(--pixel-size) * 2);
+    width: calc(var(--pixel-size) * 37);
+    height: calc(var(--pixel-size) * 38);
+ }
+ .dpad-button {
+    appearance:none;
+    outline:0;
+    border:0;
+    background:transparent;
+    padding:0;
+    cursor:pointer;
+ }
+ .dpad-button svg {
+    display:block;
+    height: calc(var(--pixel-size) * 13);
+ }
+
+ .dpad-button.pressed .Arrow_arrow-inset { stroke:#07c2cc; }
+ .dpad-button.pressed .Arrow_arrow-body { stroke:#17dfea; }
+
+ .dpad-up {
+    position: absolute;
+    left: calc(var(--pixel-size) * 12);
+    top:0;
+ }
+ .dpad-down {
+    position: absolute;
+    bottom:var(--pixel-size);
+    left: calc(var(--pixel-size) * 12);
+ }
+ .dpad-left {
+    position: absolute;
+    top: calc(var(--pixel-size) * 12);
+    left:0;
+ }
+ .dpad-right {
+    position: absolute;
+    top: calc(var(--pixel-size) * 12);
+    right:0;
+ }
+
+
+
+ .corner_topleft,
+ .corner_topright,
+ .corner_bottomleft,
+ .corner_bottomright {
+    position: absolute;
+    width: var(--pixel-size);
+    height: var(--pixel-size);
+    background: var(--bg);
+    z-index:2;
+ }
+
+ .corner_topleft {
+    top: calc(var(--pixel-size) * -1);
+    left: calc(var(--pixel-size) * -1);
+ }
+ .corner_topright {
+    top: calc(var(--pixel-size) * -1);
+    right: calc(var(--pixel-size) * -1);
+ }
+ .corner_bottomleft {
+    bottom: calc(var(--pixel-size) * -1);
+    left: calc(var(--pixel-size) * -1);
+ }
+ .corner_bottomright {
+    bottom: calc(var(--pixel-size) * -1);
+    right: calc(var(--pixel-size) * -1);
+ }
+
+ .headline {
+    position:absolute;
+    top:calc(var(--pixel-size) * 2);
+    right:calc(var(--pixel-size) * 2);
+    width: calc(var(--pixel-size) * 75)
+ }
+
+ .socialnet {
+   width: calc(var(--pixel-size) * 160);
+   height: calc(var(--pixel-size) * 144);
+   overflow: hidden;
+   background: #61ddf7;
+   z-index:3;
+   position:absolute;
+
+
+}
+
+.officelady {
+   z-index: 1;
+   min-width: 100%;
+   min-height: 100%;
+   position: absolute;
+   }
+
+.followmeinst {
+   right: 0%;
+   top: 40%;
+   z-index: 2;
+   position: absolute;
+   }
+
+.followmeontiktok {
+   z-index: 2;
+   right: 0%;
+   top: 55%;
+   position: absolute;
+   }
+
+
+
+.closesn {
+   left: 39%;
+   position: relative;
+   width: 20%;
+   z-index:1;
+   top: 95%;
+   }
+
+.closesb {
+      left: 39%;
+      width: 20%;
+      z-index:1;
+      top: 95%;
+      }
+
+.safe-box {
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 144);
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 4;
+    position:absolute;
+  }
+
+  input[type="password"] {
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+.passton {
+    padding: 10px;
+    font-size: 20px;
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .keypad {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  #message {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  .mute-button {
+  fill: #000;
+  transition: fill 0.2s ease-in-out;
+  right: 90%;
+  position: absolute;
+  top: 90%;
+}
+
+
+.mute-button.muted {
+  fill: #f00;
+}
+
+.testnew {
+   width: calc(var(--pixel-size) * 160);
+   height: calc(var(--pixel-size) * 144);
+   background: #61ddf7;
+   z-index:1;
+   position:absolute;
+   }
