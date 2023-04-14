@@ -17,7 +17,7 @@ var m = character.attributes[1]
 var x = 88;
 var y = 108;
 var held_directions = []; 
-var speed = 2; 
+var speed = 1; 
 var snx1 = 158       
 var snx2 = 146
 var shopx1 = 30
@@ -196,6 +196,7 @@ function remframepass(){
       x = 88;
       y = 112;
       document.getElementById("testoto").style.backgroundImage = "url('map33.gif')";
+      document.getElementById("testoto1").style.backgroundImage = "url('backgroundhelpshop.png')";
       snx1 = snx2 = shopx1 = shopx2 = asc1 = asc2 = 1000;
       p = false;
       musee = true;
@@ -214,6 +215,7 @@ function remframepass(){
       asc2 = MA_VALEUR_ORIGINE6;
       musee = false;
       document.getElementById("testoto").style.backgroundImage = "url('map333.gif')";
+      document.getElementById("testoto1").style.backgroundImage = "url('backgroundhelp.png')";
       }
     }
   }
